@@ -52,3 +52,19 @@ FOREIGN KEY(id_livro) REFERENCES Livros (id_livro),
 FOREIGN KEY(id_cliente) REFERENCES Clientes (id_cliente)
 );
 
+-- INSERIR --
+
+-- LIVROS HARRY POTTER --
+INSERT INTO Livros (quant_livro, preco_livro, editora_livro, genero_livro, autor_livro, titulo_livro) VALUES
+(10, 59.90, 'Rocco', 'Fantasia', 'J.K. Rowling', 'Harry Potter e a Pedra Filosofal'),
+(8, 62.50, 'Rocco', 'Fantasia', 'J.K. Rowling', 'Harry Potter e a Câmara Secreta'),
+(12, 65.00, 'Rocco', 'Fantasia', 'J.K. Rowling', 'Harry Potter e o Prisioneiro de Azkaban'),
+(7, 70.00, 'Rocco', 'Fantasia', 'J.K. Rowling', 'Harry Potter e o Cálice de Fogo'),
+(9, 75.00, 'Rocco', 'Fantasia', 'J.K. Rowling', 'Harry Potter e a Ordem da Fênix'),
+(6, 80.00, 'Rocco', 'Fantasia', 'J.K. Rowling', 'Harry Potter e o Enigma do Príncipe'),
+(5, 85.00, 'Rocco', 'Fantasia', 'J.K. Rowling', 'Harry Potter e as Relíquias da Morte');
+ 
+ select * from Livros;
+
+
+
