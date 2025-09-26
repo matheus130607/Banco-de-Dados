@@ -1,9 +1,9 @@
 <?php
 // conexão com o BD
-$mysqli = mysqli_connect('localhost', 'root', 'senaisp', 'livraria');
+$mysqli = mysqli_connect('localhost', 'root', 'senaisp', 'Book_Master');
 
 // buscar valores no BD
-$columns = array('titulo','ano_publicacao','preco');
+$columns = array('titulo_livro','quant_livro','preco_livro');
 
 // Trazer conteúdo caso exista informações e dados do BD
 $column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0];
@@ -21,7 +21,7 @@ if ($result = $mysqli->query('SELECT * FROM livros ORDER BY ' .  $column . ' ' .
 	<!DOCTYPE html>
 	<html>
 		<head>
-			<title>Banco de Dados - Livraria</title>
+			<title>Banco de Dados - Book Master</title>
 			<meta charset="utf-8">
 			
 			<style>
@@ -68,15 +68,15 @@ if ($result = $mysqli->query('SELECT * FROM livros ORDER BY ' .  $column . ' ' .
 		<body>
 			<table>
 				<tr>
-					<th><a href="index.php?column=titulo&order=<?php echo $asc_or_desc; ?>">Titulo<i class="fas fa-sort<?php echo $column == 'titulo' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-					<th><a href="index.php?column=ano_publicacao&order=<?php echo $asc_or_desc; ?>">Ano<i class="fas fa-sort<?php echo $column == 'ano_publicacao' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-					<th><a href="index.php?column=preco&order=<?php echo $asc_or_desc; ?>">Preço <i class="fas fa-sort<?php echo $column == 'preco' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+					<th><a href="index.php?column=titulo&order=<?php echo $asc_or_desc; ?>">Titulo<i class="fas fa-sort<?php echo $column == 'titulo_livro' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+					<th><a href="index.php?column=ano_publicacao&order=<?php echo $asc_or_desc; ?>">Ano<i class="fas fa-sort<?php echo $column == 'quant_livro' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+					<th><a href="index.php?column=preco&order=<?php echo $asc_or_desc; ?>">Preço <i class="fas fa-sort<?php echo $column == 'preco_livro' ? '-' . $up_or_down : ''; ?>"></i></a></th>
 				</tr>
 				<?php while ($row = $result->fetch_assoc()): ?>
 				<tr>
-					<td<?php echo $column == 'titulo' ? $add_class : ''; ?>><?php echo $row['titulo']; ?></td>
-					<td<?php echo $column == 'ano' ? $add_class : ''; ?>><?php echo $row['ano_publicacao']; ?></td>
-					<td<?php echo $column == 'preco' ? $add_class : ''; ?>><?php echo $row['preco']; ?></td>
+					<td<?php echo $column == 'titulo' ? $add_class : ''; ?>><?php echo $row['titulo_livro']; ?></td>
+					<td<?php echo $column == 'quantidade' ? $add_class : ''; ?>><?php echo $row['quant_livro']; ?></td>
+					<td<?php echo $column == 'preco' ? $add_class : ''; ?>><?php echo $row['preco_livro']; ?></td>
 				</tr>
 				<?php endwhile; ?>
 			</table>

@@ -65,13 +65,29 @@ INSERT INTO Livros (quant_livro, preco_livro, editora_livro, genero_livro, autor
 (5, 85.00, 'Rocco', 'Fantasia', 'J.K. Rowling', 'Harry Potter e as Relíquias da Morte');
  
  
+ -- LIVROS PERCY JACKSON --
+INSERT INTO Livros (quant_livro, preco_livro, editora_livro, genero_livro, autor_livro, titulo_livro) VALUES
+(15, 49.90, 'Intrínseca', 'Fantasia', 'Rick Riordan', 'O Ladrão de Raios'),
+(12, 52.00, 'Intrínseca', 'Fantasia', 'Rick Riordan', 'O Mar de Monstros'),
+(10, 55.00, 'Intrínseca', 'Fantasia', 'Rick Riordan', 'A Maldição do Titã'),
+(8, 60.00, 'Intrínseca', 'Fantasia', 'Rick Riordan', 'A Batalha do Labirinto'),
+(6, 65.00, 'Intrínseca', 'Fantasia', 'Rick Riordan', 'O Último Olimpiano');
+ 
  -- AUTORES --
  INSERT INTO Autores (data_nasc_autor, nacionalidade_autor, nome_autor) VALUES
 ('1965-07-31', 'Britânica', 'J.K. Rowling');
+
+-- AUTORES (RICK RIORDAN) --
+INSERT INTO Autores (data_nasc_autor, nacionalidade_autor, nome_autor) VALUES
+('1964-06-05', 'Americano', 'Rick Riordan');
  
  -- EDITORAS --
  INSERT INTO Editoras (telefone_editora, cidade_editora, nome_editora, CNPJ_editora, endereco_editora, contato_editora) VALUES
 ('(21)1234-5678', 'Rio de Janeiro', 'Rocco', '12345678000199', 'Rua da Editora, 123 - RJ', 'Maria Fernandes');
+
+-- EDITORAS (INTRÍNSECA) --
+INSERT INTO Editoras (telefone_editora, cidade_editora, nome_editora, CNPJ_editora, endereco_editora, contato_editora) VALUES
+('(21)2233-4455', 'Rio de Janeiro', 'Intrínseca', '98765432000188', 'Av. das Letras, 456 - RJ', 'João Pereira');
 
  
  -- CLIENTES --

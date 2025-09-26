@@ -133,7 +133,7 @@ where status_curso = 'inactive';
 -- Parte 6 — Consultas com Critérios e Agrupamentos --
 
 -- 1. Listar todos os alunos cadastrados --
-select id_alunos from Alunos;
+select * from Alunos;
 
 
 -- 2. Exibir apenas os nomes e e-mails dos alunos --
@@ -174,6 +174,5 @@ order by carga_horaria_curso desc  limit 3;
 -- Parte 7 — Desafios Extras --
  
 create index Index_email on Alunos (email_aluno);
-
 show index from Alunos;
 
