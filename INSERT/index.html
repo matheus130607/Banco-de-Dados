@@ -7,12 +7,14 @@
 </head>
 <body>
     <form action="inserir.php" method="POST">
-    <label>Nome:</label>
+    <label>Nome:</label><br>
     <input type="text" name="nome" required><br>
-    <label>Email:</label>
+    <label>Email:</label><br>
     <input type="text" name="email" required><br>
     <button type="submit">Enviar</button>
 </form>
+
+<a href="listar.php"><button type="button">Lista</button></a></a>
 </body>
 </html>
 
@@ -23,12 +25,33 @@
 
 <style>
     body {
-        background-color: greenyellow;
+        background-color: cadetblue;
+        margin-top: 30px;
+        margin-bottom: 20px;
+
     }
 
     form{
         text-align: center;
-        border-radius: 5px;
+        border-radius: 10px;
         font-family: 'Times New Roman', Times, serif;
         padding-top: 200px;
+        gap: 50px;
+    
     }
+
+    button {
+        border-radius: 5px;
+        text-align: center;
+        background-image: linear-gradient(to bottom, beige, black);
+        color: white;
+        margin-top: 10px;
+    }
+
+    input {
+        border-radius: 15px;
+    }
+
+    
+
+    
