@@ -13,7 +13,7 @@ CPF_cliente varchar(14) not null
 
 CREATE TABLE Veiculos (
 id_veiculo int auto_increment not null PRIMARY KEY,
-ano_veiculo datetime not null,
+ano_veiculo year not null,
 marca_veiculo varchar(100) not null,
 modelo_veiculo varchar(100) not null,
 cor_veiculo varchar(100) not null,
@@ -86,7 +86,7 @@ VALUES ('João Silva', 'joao@gmail.com', '11987654321', '123.456.789-10');
 
 -- INSERT Veiculos --
 INSERT INTO Veiculos (ano_veiculo, marca_veiculo, modelo_veiculo, cor_veiculo, placa_veiculo)
-VALUES ('2018-01-01', 'Honda', 'Civic', 'Preto', 'ABC1234');
+VALUES ('2018', 'Honda', 'Civic', 'Preto', 'ABC1234');
 
 -- INSERT PECAS --
 INSERT INTO Pecas (qtde_peca, tipo_peca, nome_peca, preco_peca)
@@ -102,11 +102,11 @@ VALUES ('Revisão', 200.00, 'Revisão geral do veículo', 'Revisão Completa');
 
 -- INSERT OS --
 INSERT INTO OS (tipo_os, data_termino_os, descricao_os, preco_os, data_incio_os, id_cliente, id_veiculo, id_peca, id_mecanico, id_servico)
-VALUES ('Manutenção', '2025-01-15 10:00:00', 'Troca de peça e revisão', 500.00, '2025-01-14 08:00:00', 1, 1, 1, 1, 1);
+VALUES ('Manutenção', '2025-01-15 10:00:00', 'Troca de peça e revisão', 500.00, '2025-01-14 08:00:00', 2, 2, 2, 2, 2);
 
 -- INSERT POSSUI --
 INSERT INTO possui (id_veiculo, id_cliente)
-VALUES (1, 1);
+VALUES (2, 2);
 
 
 -- SELECT --
@@ -118,5 +118,43 @@ select * from Servicos;
 select * from OS;
 select * from possui;
 
+-- ATIVIDADES SELECTS
+-- 1.Selecione todos os veículos cadastrados que são da marca "Ford
+SELECT * 
+FROM Veiculos
+WHERE marca_veiculo = 'Ford';
+
+-- 2.Clientes que abriram OS nos últimos 6 meses
+SELECT * FROM Clientes
+WHERE id_cliente IN (
+    SELECT id_cliente FROM OS
+    WHERE data_incio_os >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+);
+
+-- 3.Mecânicos com “Injeção Eletrônica” no nome
+SELECT * FROM Mecanicos
+WHERE nome_mecanico LIKE '%Injeção Eletrônica%';
+
+-- 4.OS com status “Aguardando Peça”
+SELECT * FROM OS
+WHERE tipo_os = 'Aguardando Peça';
+
+-- 5.Peças com estoque abaixo de 5
+SELECT * FROM Pecas
+WHERE qtde_peca < 5;
+
+-- 6.Veículos que tiveram mais de uma OS
+SELECT * FROM Veiculos
+WHERE (SELECT COUNT(*) FROM OS WHERE OS.id_veiculo = Veiculos.id_veiculo) > 1;
+
+-- 7.OS feitas pelo mecânico 3
+SELECT * FROM OS
+WHERE id_mecanico = 3;
+
+-- 8.Peças com preço acima de 200
+SELECT nome_peca, preco_peca FROM Pecas
+WHERE preco_peca > 200;
+
+SET SQL_SAFE_UPDATES = 0;
 
 

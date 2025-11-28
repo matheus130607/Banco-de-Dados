@@ -1,0 +1,173 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+    background: #f2f2f2;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+/* TÍTULOS PRINCIPAIS */
+h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* LINKS PADRÃO */
+a {
+    text-decoration: none;
+    color: #092038;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #005fcc;
+    text-decoration: underline;
+}
+
+/* ----------------------------- */
+/* OCULTAR SEÇÕES COM JS */
+.hidden {
+    display: none !important;
+}
+
+/* FORM CONTAINER */
+.form-container {
+    background: #fff;
+    padding: 25px;
+    width: 600px;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* LABELS */
+.form-container label {
+    font-size: 15px;
+    color: #444;
+}
+
+/* CAMPOS DE TEXTO / SELECT */
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    border-color: #092038;
+}
+
+/* BOTÕES */
+button {
+    padding: 10px;
+    background: #092038;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #005fcc;
+}
+
+/* TEXTAREA – DESCRIÇÃO */
+textarea[name="descricaoServico"] {
+    resize: none;
+    height: 100px;
+}
+
+/* ----------------------------- */
+/* ESTILO DAS TABELAS */
+table {
+    width: 95%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* arredondar bordas */
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+table th {
+    background: #092038;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 15px;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+}
+
+table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+table tr:hover {
+    background: #e9f2ff;
+}
+
+/* LINKS EDITAR / APAGAR */
+table a {
+    color: #092038;
+    font-weight: bold;
+}
+
+table a:hover {
+    color: #005fcc;
+}
+
+/* ----------------------------- */
+/* BOTÃO VOLTAR */
+.voltar {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #444;
+    color: #fff !important;
+    border-radius: 6px;
+}
+
+.voltar:hover {
+    background: #222;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    table {
+        font-size: 13px;
+    }
+    
+    table th,
+    table td {
+        padding: 8px;
+    }
+}
